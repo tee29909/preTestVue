@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>test3.1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+
+        <input v-model="point" type="number" class="form-control" id="textTodo"><br>
+
+
+    <samp v-for="oilPrice in oilPrices">
+      <input type="radio" id="oilPrice.id" value="oilPrice" v-model="select" />
+      <label>{{oilPrice.oil}}</label>
+    </samp>
+    <br>
+    <samp>
+        Picked: {{}} บาท/ลิตร
+    </samp>
+    <br>
+    <samp>
+        จำนวน: {{num}} ลิตร
+    </samp>
+    <br>
+    <samp>
+        ราคารวม: {{sum}} บาท
+    </samp>
+    </div>
+
+      
+    </div>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+            point:0,
+            select:{
+                
+                    id: 1,
+              oil: '',
+              cost: 0.0
+            
+        },
+          oilPrices: [
+            {
+              id: 1,
+              oil: "แก๊สโซฮอล์ 95",
+              cost: 26.45
+            },
+            {
+              id: 2,
+              oil: "แก๊สโซฮอล์ 91",
+              cost: 26.18
+            },
+            {
+              id: 3,
+              oil: "แก๊สโซฮอล์ E20",
+              cost: 23.44
+            },
+            {
+              id: 4,
+              oil: "แก๊สโซฮอล์ E85",
+              cost: 19.04
+            },
+            {
+              id: 5,
+              oil: "เบนซิน 95",
+              cost: 33.86
+            },
+            {
+              id: 6,
+              oil: "ดีเซล",
+              cost: 27.39
+            },
+            {
+              id: 7,
+              oil: "ดีเซล B10",
+              cost: 25.39
+            },
+            {
+              id: 8,
+              oil: "ดีเซล B20",
+              cost: 24.39
+            },
+            {
+              id: 9,
+              oil: "ดีเซลพรีเมี่ยม",
+              cost: 31.24
+            },
+            {
+              id: 10,
+              oil: "แก๊ส NGV",
+              cost: 15.62
+            }
+          ]
+        },
+        methods: {},
+        computed: {
+        index: function() {
+            return this.point;
+        },
+          num: function() {
+            return this.point;
+          },
+          sum: function() {
+              return this.select*this.point;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

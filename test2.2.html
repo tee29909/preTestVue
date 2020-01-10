@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>test2.2</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        <samp v-if="coller%3==0">red</samp>
+        <samp v-if="coller%3==1">green</samp>
+        <samp v-if="coller%3==2">yellow</samp>
+        <br>
+        
+        <template v-if="coller%3==0">
+            
+        <label v-if="coller%3==0" :style="{backgroundColor: 'red'}">___</label><br>
+        <label v-if="coller%3!=1" :style="{backgroundColor: 'darkgray'}">___</label><br>
+        <label v-if="coller%3!=2" :style="{backgroundColor: 'darkgray'}">___</label><br>
+        
+        </template>
+
+        <template v-if="coller%3==1">
+            
+           
+            <label  :style="{backgroundColor: 'darkgray'}">___</label><br>
+            <label :style="{backgroundColor: 'green'}">___</label><br>
+            <label  :style="{backgroundColor: 'darkgray'}">___</label><br>
+            
+        </template>
+
+
+        <template v-if="coller%3==2">
+            
+           
+            <label  :style="{backgroundColor: 'darkgray'}">___</label><br>
+            <label :style="{backgroundColor: 'darkgray'}">___</label><br>
+            <label  :style="{backgroundColor: 'yellow'}">___</label><br>
+            
+        </template>
+        
+        <button @click="coller++">เปลี่ยนไฟ</button>
+    </div>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data:{
+            coller:0
+        }
+        
+      });
+    </script>
+  </body>
+</html>

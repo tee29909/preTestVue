@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <input v-model="point" type="number" class="form-control" id="textTodo"
+                    >
+        <template v-if="point!=0">
+            <div v-if="point>=50&& point<60">
+              D
+            </div>
+            <div v-else-if="point>=60&& point<70">
+                C
+              </div>
+              <div v-else-if="point>=70&& point<80">
+                B
+              </div>
+              <div v-else-if="point>=80&& point<=100">
+                A
+              </div>
+              <div v-else-if="point>=0&& point<50">
+                F
+              </div>
+              <div v-else-if="point<0">
+                คะแนนมะมีติดลบนะจ๊ะ
+              </div>
+              <div v-else-if="point>100">
+                ชีวิตเกินร้อยไม่มีนะจ๊ะ
+              </div>
+          </template>
+
+    </div>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                point:0
+            },
+            methods: {
+                
+            },
+            computed:{
+                check: function () {
+                    this.point = event.target.value;
+
+ 
+                },
+                checkvalue:function(point){
+
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>
